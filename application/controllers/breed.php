@@ -1,13 +1,12 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class breed extends CI_Controller {
 //*****************************************************
-//包含登陆界面、登陆验证、以及首页
+//种猪模块的控制层
 //*****************************************************
-
     function __construct(){//加载本控制层所需的所有model文件
         parent::__construct();
-        $this -> load -> model('user_model');
+        $this->load->model('breed_model');
     }
 	public function index(){
         $this->load->view('login');
@@ -19,28 +18,22 @@ class Welcome extends CI_Controller {
 
         //2. 验证
         //3. 数据库操作
+        $this -> load -> model('user_model');//加载model文件
         $result = $this -> user_model -> get_by_name_pwd($username, $password);
 
         if($result){//查到结果
             $this -> session -> set_userdata('login_user', $result);
-            redirect('welcome/home');
+            redirect('welcome/home', array(
+                'login_user' => $result
+            ));
         }else{//未查到结果
             echo 'fail';
         }
     }
 
     public function home(){
-//        $this->load->view('home');
-        //获取提醒信息
-        $username = $this->session->userdata('login_user') -> username;
-        $remind = $this -> user_model -> get_remind_by_name($username);
-//        $articles = $this->article_model->get_ariticles_by_user($loginedUser->user_id);
-        $this -> session -> set_userdata('remind', $remind);
-
         $this->load->view('home');
-
     }
-
 }
 
 /* End of file welcome.php */
