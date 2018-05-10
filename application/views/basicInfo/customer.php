@@ -151,7 +151,7 @@
                     <ul class="sub">
                         <li><a  href="basicInfo/index">猪场设置</a></li>
                         <li><a  href="basicInfo/juanShe">圈舍设置</a></li>
-                        <li><a class="active"  href="basicInfo/customer">客户信息</a></li>
+                        <li class="active"><a  href="basicInfo/customer">客户信息</a></li>
                         <li><a  href="basicInfo/employee">员工信息</a></li>
                     </ul>
                 </li>

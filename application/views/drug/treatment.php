@@ -197,10 +197,10 @@
                       </a>
                       <ul class="sub">
                           <li><a  href="drug/index">药品库存明细</a></li>
-                          <li><a class="active"  href="drug/storage">药品入库</a></li>
+                          <li><a  href="drug/storage">药品入库</a></li>
                           <li><a  href="drug/out">药品出库</a></li>
                           <li><a  href="drug/refund">药品退库</a></li>
-                          <li><a  href="drug/treatment">诊疗登记</a></li>
+                          <li class="active"><a  href="drug/treatment">诊疗登记</a></li>
                           <li><a  href="drug/disinfection">消毒登记</a></li>
                       </ul>
                   </li>
@@ -393,7 +393,7 @@
       <footer class="site-footer">
           <div class="text-center">
               2018届信息管理与信息系统一班马金金
-              <a href="storage.html#" class="go-top">
+              <a href="treatment.php#" class="go-top">
                   <i class="fa fa-angle-up"></i>
               </a>
           </div>

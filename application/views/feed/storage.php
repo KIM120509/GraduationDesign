@@ -138,7 +138,7 @@
                   <h5 class="centered">猪场管理系统</h5>
 
                   <li class="mt">
-                      <a href="welcome/home">
+                      <a  href="welcome/home">
                           <i class="fa fa-dashboard"></i>
                           <span>首页</span>
                       </a>
@@ -183,9 +183,9 @@
                           <span>饲料管理</span>
                       </a>
                       <ul class="sub">
-                          <li><a class="active"  href="feed/index">饲料信息</a></li>
+                          <li><a  href="feed/index">饲料信息</a></li>
                           <li><a  href="feed/inventory">饲料库存明细</a></li>
-                          <li><a  href="feed/storage">饲料入库</a></li>
+                          <li class="active"><a  href="feed/storage">饲料入库</a></li>
                           <li><a  href="feed/out">饲料出库</a></li>
                           <li><a  href="feed/refund">饲料退库</a></li>
                       </ul>
@@ -393,7 +393,7 @@
       <footer class="site-footer">
           <div class="text-center">
               2018届信息管理与信息系统一班马金金
-              <a href="feedInfo.html#" class="go-top">
+              <a href="storage.php#" class="go-top">
                   <i class="fa fa-angle-up"></i>
               </a>
           </div>

@@ -178,7 +178,7 @@
                       </ul>
                   </li>
                   <li class="sub-menu">
-                      <a class="active" href="javascript:;" >
+                      <a href="javascript:;" >
                           <i class="fa fa-tasks"></i>
                           <span>饲料管理</span>
                       </a>
@@ -187,16 +187,16 @@
                           <li><a  href="feed/inventory">饲料库存明细</a></li>
                           <li><a  href="feed/storage">饲料入库</a></li>
                           <li><a  href="feed/out">饲料出库</a></li>
-                          <li><a class="active"  href="feed/refund">饲料退库</a></li>
+                          <li><a  href="feed/refund">饲料退库</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
-                      <a href="javascript:;" >
+                      <a class="active" href="javascript:;" >
                           <i class="fa fa-th"></i>
                           <span>药品管理</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="drug/index">药品库存明细</a></li>
+                          <li class="active"><a  href="drug/index">药品库存明细</a></li>
                           <li><a  href="drug/storage">药品入库</a></li>
                           <li><a  href="drug/out">药品出库</a></li>
                           <li><a  href="drug/refund">药品退库</a></li>
@@ -393,7 +393,7 @@
       <footer class="site-footer">
           <div class="text-center">
               2018届信息管理与信息系统一班马金金
-              <a href="refund.html#" class="go-top">
+              <a href="inventory.php#" class="go-top">
                   <i class="fa fa-angle-up"></i>
               </a>
           </div>

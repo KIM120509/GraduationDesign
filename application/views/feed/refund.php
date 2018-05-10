@@ -138,7 +138,7 @@
                   <h5 class="centered">猪场管理系统</h5>
 
                   <li class="mt">
-                      <a href="welcome/home">
+                      <a  href="welcome/home">
                           <i class="fa fa-dashboard"></i>
                           <span>首页</span>
                       </a>
@@ -178,7 +178,7 @@
                       </ul>
                   </li>
                   <li class="sub-menu">
-                      <a href="javascript:;" >
+                      <a class="active" href="javascript:;" >
                           <i class="fa fa-tasks"></i>
                           <span>饲料管理</span>
                       </a>
@@ -187,7 +187,7 @@
                           <li><a  href="feed/inventory">饲料库存明细</a></li>
                           <li><a  href="feed/storage">饲料入库</a></li>
                           <li><a  href="feed/out">饲料出库</a></li>
-                          <li><a  href="feed/refund">饲料退库</a></li>
+                          <li class="active" ><a href="feed/refund">饲料退库</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
@@ -215,14 +215,14 @@
                       </ul>
                   </li>
                   <li class="sub-menu">
-                      <a class="active"  href="javascript:;" >
+                      <a href="javascript:;" >
                           <i class=" fa fa-bar-chart-o"></i>
                           <span>日用商品管理</span>
                       </a>
                       <ul class="sub">
                           <li><a  href="daily/index">库存明细</a></li>
                           <li><a  href="daily/purchase">采购登记</a></li>
-                          <li><a class="active"   href="daily/use">领用登记</a></li>
+                          <li><a  href="daily/use">领用登记</a></li>
                           <li><a  href="daily/scrap">报废登记</a></li>
                           <li><a  href="daily/articlesInfo">用品信息</a></li>
                       </ul>
@@ -393,7 +393,7 @@
       <footer class="site-footer">
           <div class="text-center">
               2018届信息管理与信息系统一班马金金
-              <a href="use.html#" class="go-top">
+              <a href="refund.php#" class="go-top">
                   <i class="fa fa-angle-up"></i>
               </a>
           </div>

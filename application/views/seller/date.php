@@ -177,7 +177,7 @@ $login_user = $this->session->userdata('login_user');
                           <span>商品猪管理</span>
                       </a>
                       <ul class="sub">
-                          <li><a class="active"  href="seller/index">商品猪资料</a></li>
+                          <li class="active"><a  href="seller/index">商品猪资料</a></li>
                           <li><a  href="seller/info">商品猪信息登记</a></li>
                       </ul>
                   </li>

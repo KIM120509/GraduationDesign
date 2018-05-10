@@ -165,7 +165,7 @@ $login_user = $this->session->userdata('login_user');
                           <span>种猪管理</span>
                       </a>
                       <ul class="sub">
-                          <li><a class="active"  href="breed/index">种猪资料</a></li>
+                          <li class="active"><a  href="breed/index">种猪资料</a></li>
                           <li><a  href="breed/info">种猪信息登记</a></li>
                           <li><a  href="breed/boar">公猪配种登记</a></li>
                           <li><a  href="breed/sow">母猪信息登记</a></li>

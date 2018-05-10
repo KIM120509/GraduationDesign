@@ -138,7 +138,7 @@
                   <h5 class="centered">猪场管理系统</h5>
 
                   <li class="mt">
-                      <a  href="welcome/home">
+                      <a href="welcome/home">
                           <i class="fa fa-dashboard"></i>
                           <span>首页</span>
                       </a>
@@ -191,7 +191,7 @@
                       </ul>
                   </li>
                   <li class="sub-menu">
-                      <a class="active" href="javascript:;" >
+                      <a class="active"  href="javascript:;" >
                           <i class="fa fa-th"></i>
                           <span>药品管理</span>
                       </a>
@@ -200,8 +200,8 @@
                           <li><a  href="drug/storage">药品入库</a></li>
                           <li><a  href="drug/out">药品出库</a></li>
                           <li><a  href="drug/refund">药品退库</a></li>
-                          <li><a class="active"  href="drug/treatment">诊疗登记</a></li>
-                          <li><a  href="drug/disinfection">消毒登记</a></li>
+                          <li><a  href="drug/treatment">诊疗登记</a></li>
+                          <li class="active" ><a href="drug/disinfection">消毒登记</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
@@ -393,7 +393,7 @@
       <footer class="site-footer">
           <div class="text-center">
               2018届信息管理与信息系统一班马金金
-              <a href="treatment.html#" class="go-top">
+              <a href="disinfection.php#" class="go-top">
                   <i class="fa fa-angle-up"></i>
               </a>
           </div>

@@ -186,7 +186,7 @@
                           <li><a  href="feed/index">饲料信息</a></li>
                           <li><a  href="feed/inventory">饲料库存明细</a></li>
                           <li><a  href="feed/storage">饲料入库</a></li>
-                          <li><a class="active"  href="feed/out">饲料出库</a></li>
+                          <li class="active"><a  href="feed/out">饲料出库</a></li>
                           <li><a  href="feed/refund">饲料退库</a></li>
                       </ul>
                   </li>
@@ -393,7 +393,7 @@
       <footer class="site-footer">
           <div class="text-center">
               2018届信息管理与信息系统一班马金金
-              <a href="out.html#" class="go-top">
+              <a href="out.php#" class="go-top">
                   <i class="fa fa-angle-up"></i>
               </a>
           </div>
