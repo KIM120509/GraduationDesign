@@ -1,3 +1,6 @@
+<?php
+$login_user = $this->session->userdata('login_user');
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,15 +11,15 @@
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
     <title>DASHGUM - Bootstrap Admin Template</title>
-
+      <base href="<?php echo site_url(); ?>">
     <!-- Bootstrap core CSS -->
-    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
     <!--external css-->
-    <link href="../assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
 
     <!-- Custom styles for this template -->
-    <link href="../assets/css/style.css" rel="stylesheet">
-    <link href="../assets/css/style-responsive.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style-responsive.css" rel="stylesheet">
     <style>
       #main-content .wrapper .row button.add{
           float: right;
@@ -43,14 +46,14 @@
               <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
           </div>
           <!--logo start-->
-          <a href="../index.html" class="logo"><b>中小型猪场管理系统（非专业版）</b></a>
+          <a href="welcome/home" class="logo"><b>中小型猪场管理系统（非专业版）</b></a>
           <!--logo end-->
           <div class="nav notify-row" id="top_menu">
               <!--  notification start -->
               <ul class="nav top-menu">
                   <!-- settings start -->
                   <li class="dropdown">
-                      <a data-toggle="dropdown" class="dropdown-toggle" href="../index.html#">
+                      <a data-toggle="dropdown" class="dropdown-toggle" href="welcome/home">
                           <i class="fa fa-tasks"></i>
                           <span class="badge bg-theme">4</span>
                       </a>
@@ -60,7 +63,7 @@
                               <p class="green">您有4条提醒信息，请及时处理！</p>
                           </li>
                           <li>
-                              <a href="index.html#">
+                              <a href="welcome/home">
                                   <div class="task-info">
                                       <div class="desc">DashGum Admin Panel</div>
                                       <div class="percent">40%</div>
@@ -73,7 +76,7 @@
                               </a>
                           </li>
                           <li>
-                              <a href="index.html#">
+                              <a href="welcome/home">
                                   <div class="task-info">
                                       <div class="desc">Database Update</div>
                                       <div class="percent">60%</div>
@@ -86,7 +89,7 @@
                               </a>
                           </li>
                           <li>
-                              <a href="index.html#">
+                              <a href="welcome/home">
                                   <div class="task-info">
                                       <div class="desc">Product Development</div>
                                       <div class="percent">80%</div>
@@ -99,7 +102,7 @@
                               </a>
                           </li>
                           <li>
-                              <a href="index.html#">
+                              <a href="welcome/home">
                                   <div class="task-info">
                                       <div class="desc">Payments Sent</div>
                                       <div class="percent">70%</div>
@@ -120,6 +123,7 @@
               </ul>
               <!--  notification end -->
           </div>
+
           <div class="top-menu">
               <ul class="nav pull-right top-menu">
                   <li id="welcome">欢迎您，马金金（管理员）</li>
@@ -156,7 +160,7 @@
                       </ul>
                   </li>
                   <li class="sub-menu">
-                      <a href="javascript:;" >
+                      <a class="active" href="javascript:;" >
                           <i class="fa fa-cogs"></i>
                           <span>种猪管理</span>
                       </a>
@@ -164,7 +168,7 @@
                           <li><a  href="breed/index">种猪资料</a></li>
                           <li><a  href="breed/info">种猪信息登记</a></li>
                           <li><a  href="breed/boar">公猪配种登记</a></li>
-                          <li><a  href="breed/sow">母猪信息登记</a></li>
+                          <li><a class="active"  href="breed/sow">母猪信息登记</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
@@ -178,7 +182,7 @@
                       </ul>
                   </li>
                   <li class="sub-menu">
-                      <a class="active" href="javascript:;" >
+                      <a href="javascript:;" >
                           <i class="fa fa-tasks"></i>
                           <span>饲料管理</span>
                       </a>
@@ -187,7 +191,7 @@
                           <li><a  href="feed/inventory">饲料库存明细</a></li>
                           <li><a  href="feed/storage">饲料入库</a></li>
                           <li><a  href="feed/out">饲料出库</a></li>
-                          <li><a class="active"  href="feed/refund">饲料退库</a></li>
+                          <li><a  href="feed/refund">饲料退库</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
@@ -393,7 +397,7 @@
       <footer class="site-footer">
           <div class="text-center">
               2018届信息管理与信息系统一班马金金
-              <a href="refund.html#" class="go-top">
+              <a href="javascript:scrollTo(0,0);"  class="go-top">
                   <i class="fa fa-angle-up"></i>
               </a>
           </div>
@@ -402,15 +406,15 @@
   </section>
 
     <!-- js placed at the end of the document so the pages load faster -->
-    <script src="../assets/js/jquery.js"></script>
-    <script src="../assets/js/bootstrap.min.js"></script>
-    <script src="../assets/js/jquery-ui-1.9.2.custom.min.js"></script>
-    <script src="../assets/js/jquery.ui.touch-punch.min.js"></script>
-    <script class="include" type="text/javascript" src="../assets/js/jquery.dcjqaccordion.2.7.js"></script>
-    <script src="../assets/js/jquery.scrollTo.min.js"></script>
-    <script src="../assets/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery-ui-1.9.2.custom.min.js"></script>
+    <script src="assets/js/jquery.ui.touch-punch.min.js"></script>
+    <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="assets/js/jquery.scrollTo.min.js"></script>
+    <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
     <!--common script for all pages-->
-    <script src="../assets/js/common-scripts.js"></script>
+    <script src="assets/js/common-scripts.js"></script>
 
 
   </body>
