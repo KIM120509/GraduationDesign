@@ -1,5 +1,6 @@
 <?php
 $login_user = $this->session->userdata('login_user');
+$remind = $this->session->userdata('remind');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +11,7 @@ $login_user = $this->session->userdata('login_user');
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>中小型猪场管理系统（非专业版）</title>
+    <title>中小型猪场管理系统</title>
     <base href="<?php echo site_url(); ?>">
     <link href="assets/css/bootstrap.css" rel="stylesheet">
     <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
@@ -38,7 +39,7 @@ $login_user = $this->session->userdata('login_user');
                 <ul class="nav top-menu">
                     <!-- settings start -->
                     <li class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="iwelcome/home">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="welcome/home">
                             <i class="fa fa-tasks"></i>
                             <span class="badge bg-theme">4</span>
                         </a>
@@ -48,7 +49,7 @@ $login_user = $this->session->userdata('login_user');
                                 <p class="green">您有4条提醒信息，请及时处理！</p>
                             </li>
                             <?php
-                            foreach($reminds as $rem) {
+                            foreach($remind as $rem) {
                                 ?>
                                 <li>
                                     <div class="task-info">
@@ -76,7 +77,7 @@ $login_user = $this->session->userdata('login_user');
                 <!-- sidebar menu start-->
                 <ul class="sidebar-menu" id="nav-accordion">
 
-                    <p class="centered"><a href="welcome/home"><img src="../assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+                    <p class="centered"><a href="welcome/home"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
                     <h5 class="centered">猪场管理系统</h5>
 
                     <li class="mt">
@@ -164,7 +165,7 @@ $login_user = $this->session->userdata('login_user');
                         <ul class="sub">
                             <li><a  href="daily/index">库存明细</a></li>
                             <li><a  href="daily/purchase">采购登记</a></li>
-                            <li><a  href="daily/use">领用登记</a></li>
+                            <li><a  href="daily/uses">领用登记</a></li>
                             <li><a  href="daily/scrap">报废登记</a></li>
                             <li><a  href="daily/articlesInfo">用品信息</a></li>
                         </ul>

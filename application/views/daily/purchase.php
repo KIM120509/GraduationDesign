@@ -7,16 +7,16 @@
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>DASHGUM - Bootstrap Admin Template</title>
-
+    <title>中小型猪场管理系统</title>
+      <base href="<?php echo site_url(); ?>">
     <!-- Bootstrap core CSS -->
-    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
     <!--external css-->
-    <link href="../assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
 
     <!-- Custom styles for this template -->
-    <link href="../assets/css/style.css" rel="stylesheet">
-    <link href="../assets/css/style-responsive.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style-responsive.css" rel="stylesheet">
     <style>
       #main-content .wrapper .row button.add{
           float: right;
@@ -134,7 +134,7 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
 
-                  <p class="centered"><a href="welcome/home"><img src="../assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+                  <p class="centered"><a href="welcome/home"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
                   <h5 class="centered">猪场管理系统</h5>
 
                   <li class="mt">
@@ -222,7 +222,7 @@
                       <ul class="sub">
                           <li><a  href="daily/index">库存明细</a></li>
                           <li class="active"><a  href="daily/purchase">采购登记</a></li>
-                          <li><a  href="daily/use">领用登记</a></li>
+                          <li><a  href="daily/uses">领用登记</a></li>
                           <li><a  href="daily/scrap">报废登记</a></li>
                           <li><a  href="daily/articlesInfo">用品信息</a></li>
                       </ul>
@@ -402,15 +402,15 @@
   </section>
 
     <!-- js placed at the end of the document so the pages load faster -->
-    <script src="../assets/js/jquery.js"></script>
-    <script src="../assets/js/bootstrap.min.js"></script>
-    <script src="../assets/js/jquery-ui-1.9.2.custom.min.js"></script>
-    <script src="../assets/js/jquery.ui.touch-punch.min.js"></script>
-    <script class="include" type="text/javascript" src="../assets/js/jquery.dcjqaccordion.2.7.js"></script>
-    <script src="../assets/js/jquery.scrollTo.min.js"></script>
-    <script src="../assets/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery-ui-1.9.2.custom.min.js"></script>
+    <script src="assets/js/jquery.ui.touch-punch.min.js"></script>
+    <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="assets/js/jquery.scrollTo.min.js"></script>
+    <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
     <!--common script for all pages-->
-    <script src="../assets/js/common-scripts.js"></script>
+    <script src="assets/js/common-scripts.js"></script>
 
 
   </body>

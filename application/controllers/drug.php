@@ -23,6 +23,9 @@ class drug extends CI_Controller {
     public function disinfection(){
         $this->load->view('drug/disinfection');
     }
+    public function storage(){
+        $this->load->view('drug/storage');
+    }
 }
 
 /* End of file welcome.php */

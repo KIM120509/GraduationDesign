@@ -9,7 +9,7 @@ class breed extends CI_Controller {
         $this->load->model('breed_model');
     }
 	public function index(){
-        $this->load->view('breed/data');
+        $this->load->view('breed/date');
 	}
     public function info(){
         $this->load->view('breed/info');

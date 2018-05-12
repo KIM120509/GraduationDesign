@@ -7,16 +7,16 @@
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>DASHGUM - Bootstrap Admin Template</title>
-
+    <title>中小型猪场管理系统</title>
+    <base href="<?php echo site_url(); ?>">
     <!-- Bootstrap core CSS -->
-    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
     <!--external css-->
-    <link href="../assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
 
     <!-- Custom styles for this template -->
-    <link href="../assets/css/style.css" rel="stylesheet">
-    <link href="../assets/css/style-responsive.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style-responsive.css" rel="stylesheet">
     <style>
         #main-content .wrapper .row button.add{
             float: right;
@@ -37,20 +37,19 @@
 <body>
 
 <section id="container" >
-    <!--header start-->
     <header class="header black-bg">
         <div class="sidebar-toggle-box">
             <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
         </div>
         <!--logo start-->
-        <a href="index.html" class="logo"><b>中小型猪场管理系统（非专业版）</b></a>
+        <a href="welcome/home" class="logo"><b>中小型猪场管理系统（非专业版）</b></a>
         <!--logo end-->
         <div class="nav notify-row" id="top_menu">
             <!--  notification start -->
             <ul class="nav top-menu">
                 <!-- settings start -->
                 <li class="dropdown">
-                    <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="welcome/home">
                         <i class="fa fa-tasks"></i>
                         <span class="badge bg-theme">4</span>
                     </a>
@@ -59,61 +58,17 @@
                         <li>
                             <p class="green">您有4条提醒信息，请及时处理！</p>
                         </li>
-                        <li>
-                            <a href="index.html#">
+                        <?php
+                        foreach($reminds as $rem) {
+                            ?>
+                            <li>
                                 <div class="task-info">
-                                    <div class="desc">DashGum Admin Panel</div>
-                                    <div class="percent">40%</div>
+                                    <div class="desc"><?php echo $rem->content;?></div>
                                 </div>
-                                <div class="progress progress-striped">
-                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                        <span class="sr-only">40% Complete (success)</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="index.html#">
-                                <div class="task-info">
-                                    <div class="desc">Database Update</div>
-                                    <div class="percent">60%</div>
-                                </div>
-                                <div class="progress progress-striped">
-                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                        <span class="sr-only">60% Complete (warning)</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="index.html#">
-                                <div class="task-info">
-                                    <div class="desc">Product Development</div>
-                                    <div class="percent">80%</div>
-                                </div>
-                                <div class="progress progress-striped">
-                                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                        <span class="sr-only">80% Complete</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="index.html#">
-                                <div class="task-info">
-                                    <div class="desc">Payments Sent</div>
-                                    <div class="percent">70%</div>
-                                </div>
-                                <div class="progress progress-striped">
-                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
-                                        <span class="sr-only">70% Complete (Important)</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="external">
-                            <a href="#">查看全部提醒</a>
-                        </li>
+                            </li>
+                            <?php
+                        }
+                        ?>
                     </ul>
                 </li>
                 <!-- settings end -->
@@ -122,19 +77,16 @@
         </div>
         <div class="top-menu">
             <ul class="nav pull-right top-menu">
-                <li  id="welcome">欢迎您，马金金（管理员）</li>
+                <li id="welcome">欢迎您，<?php echo $login_user -> username; ?>（<?php echo $login_user -> identity; ?>）</li>
             </ul>
         </div>
     </header>
-    <!--header end-->
-
-    <!--sidebar start-->
     <aside>
         <div id="sidebar"  class="nav-collapse ">
             <!-- sidebar menu start-->
             <ul class="sidebar-menu" id="nav-accordion">
 
-                <p class="centered"><a href="welcome/home"><img src="../assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+                <p class="centered"><a href="welcome/home"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
                 <h5 class="centered">猪场管理系统</h5>
 
                 <li class="mt">
@@ -222,7 +174,7 @@
                     <ul class="sub">
                         <li><a  href="daily/index">库存明细</a></li>
                         <li><a  href="daily/purchase">采购登记</a></li>
-                        <li><a  href="daily/use">领用登记</a></li>
+                        <li><a  href="daily/uses">领用登记</a></li>
                         <li><a  href="daily/scrap">报废登记</a></li>
                         <li><a  href="daily/articlesInfo">用品信息</a></li>
                     </ul>
@@ -231,9 +183,6 @@
             <!-- sidebar menu end-->
         </div>
     </aside>
-    <!--sidebar end-->
-
-    <!--main content start-->
     <section id="main-content">
         <section class="wrapper">
             <h3><i class="fa fa-angle-right"></i> 员工信息</h3>
@@ -283,9 +232,6 @@
             </div>
         </section>
     </section>
-    <!--main content end-->
-
-    <!--footer start-->
     <footer class="site-footer">
         <div class="text-center">
             2018届信息管理与信息系统一班马金金
@@ -294,32 +240,16 @@
             </a>
         </div>
     </footer>
-    <!--footer end-->
 </section>
 
-<!-- js placed at the end of the document so the pages load faster -->
-<script src="../assets/js/jquery.js"></script>
-<script src="../assets/js/bootstrap.min.js"></script>
-<script src="../assets/js/jquery-ui-1.9.2.custom.min.js"></script>
-<script src="../assets/js/jquery.ui.touch-punch.min.js"></script>
-<script class="include" type="text/javascript" src="../assets/js/jquery.dcjqaccordion.2.7.js"></script>
-<script src="../assets/js/jquery.scrollTo.min.js"></script>
-<script src="../assets/js/jquery.nicescroll.js" type="text/javascript"></script>
-
-
-<!--common script for all pages-->
-<script src="../assets/js/common-scripts.js"></script>
-
-<!--script for this page-->
-
-<!--<script>-->
-<!--//custom select box-->
-
-<!--$(function(){-->
-<!--$('select.styled').customSelect();-->
-<!--});-->
-
-<!--</script>-->
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="assets/js/jquery.ui.touch-punch.min.js"></script>
+<script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
+<script src="assets/js/jquery.scrollTo.min.js"></script>
+<script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
+<script src="assets/js/common-scripts.js"></script>
 
 </body>
 </html>

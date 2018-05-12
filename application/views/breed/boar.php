@@ -10,8 +10,8 @@ $login_user = $this->session->userdata('login_user');
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>DASHGUM - Bootstrap Admin Template</title>
-      <base href="<?php echo site_url(); ?>">
+    <title>中小型猪场管理系统</title>
+    <base href="<?php echo site_url(); ?>">
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
     <!--external css-->
@@ -138,7 +138,7 @@ $login_user = $this->session->userdata('login_user');
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
 
-                  <p class="centered"><a href="welcome/home"><img src="../assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+                  <p class="centered"><a href="welcome/home"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
                   <h5 class="centered">猪场管理系统</h5>
 
                   <li class="mt">
@@ -160,7 +160,7 @@ $login_user = $this->session->userdata('login_user');
                       </ul>
                   </li>
                   <li class="sub-menu">
-                      <a href="javascript:;" >
+                      <a class="active" href="javascript:;" >
                           <i class="fa fa-cogs"></i>
                           <span>种猪管理</span>
                       </a>
@@ -226,7 +226,7 @@ $login_user = $this->session->userdata('login_user');
                       <ul class="sub">
                           <li><a  href="daily/index">库存明细</a></li>
                           <li><a  href="daily/purchase">采购登记</a></li>
-                          <li><a  href="daily/use">领用登记</a></li>
+                          <li><a  href="daily/uses">领用登记</a></li>
                           <li><a  href="daily/scrap">报废登记</a></li>
                           <li><a  href="daily/articlesInfo">用品信息</a></li>
                       </ul>

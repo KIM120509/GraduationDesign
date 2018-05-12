@@ -9,7 +9,7 @@ class seller extends CI_Controller {
         $this->load->model('seller_model');
     }
     public function index(){
-        $this->load->view('seller/data');
+        $this->load->view('seller/date');
     }
     public function info(){
         $this->load->view('seller/info');
