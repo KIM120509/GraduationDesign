@@ -14,11 +14,16 @@ class User_model extends CI_Model{
         )) -> row(); // result();
     }
 
-    public function get_remind_by_name($name){
-        return $this -> db -> get_where('t_remind', array(
-            'username' => $name
-        )) -> row(); // result();
+    public function get_remind_by_name($user_id){
+//        return $this -> db -> get_where('t_remind', array(
+//            'user_id' => $id
+//        )) -> row(); // result();
 //        $this->db->affected_rows()
+        $sql="select * from t_remind where user_id=$user_id";
+        $result = $this->db->query ($sql);
+        $re = $result->result ();
+        return $re;
+
     }
 
 }

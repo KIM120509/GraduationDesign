@@ -1,6 +1,5 @@
 <?php
 $login_user = $this->session->userdata('login_user');
-$remind = $this->session->userdata('remind');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,6 +22,40 @@ $remind = $this->session->userdata('remind');
     <script src="assets/js/chart-master/Chart.js"></script>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <style>
+
+        #pic{
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+            position: relative;
+        }
+        #big-img{
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        #big-img img{
+            position: absolute;
+        }
+        .text-content{
+            padding-top: 20px;
+            /*font-size: 18px;*/
+        }
+        .text-tile{
+            font-size: 30px;
+            font-weight: bolder;
+            font-style: italic;
+            padding-bottom: 20px;
+            display: inline-block;
+            text-shadow: 5px 5px 5px #797979;
+        }
+        .text{
+            font-size: 18px;
+            text-indent:36px;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -31,27 +64,23 @@ $remind = $this->session->userdata('remind');
             <div class="sidebar-toggle-box">
                 <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
             </div>
-            <!--logo start-->
-            <a href="welcome/home" class="logo"><b>中小型猪场管理系统（非专业版）</b></a>
-            <!--logo end-->
+            <a href="welcome/home" class="logo"><b>中小型猪场管理系统</b></a>
             <div class="nav notify-row" id="top_menu">
-                <!--  notification start -->
                 <ul class="nav top-menu">
-                    <!-- settings start -->
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="welcome/home">
                             <i class="fa fa-tasks"></i>
-                            <span class="badge bg-theme">4</span>
+                            <span class="badge bg-theme"><?php echo count($remind)?></span>
                         </a>
                         <ul class="dropdown-menu extended tasks-bar">
                             <div class="notify-arrow notify-arrow-green"></div>
                             <li>
-                                <p class="green">您有4条提醒信息，请及时处理！</p>
+                                <p class="green">您有<?php echo count($remind)?>条提醒信息，请及时处理！</p>
                             </li>
                             <?php
                             foreach($remind as $rem) {
                                 ?>
-                                <li>
+                                <li class="remind">
                                     <div class="task-info">
                                         <div class="desc"><?php echo $rem->content;?></div>
                                     </div>
@@ -61,17 +90,15 @@ $remind = $this->session->userdata('remind');
                             ?>
                         </ul>
                     </li>
-                    <!-- settings end -->
                 </ul>
-                <!--  notification end -->
             </div>
             <div class="top-menu">
                 <ul class="nav pull-right top-menu">
                     <li id="welcome">欢迎您，<?php echo $login_user -> username; ?>（<?php echo $login_user -> identity; ?>）</li>
+                    <li id="sign-out"><a href="welcome/index" class="btn btn-theme04">退出登录</a></li>
                 </ul>
             </div>
         </header>
-
         <aside>
             <div id="sidebar"  class="nav-collapse ">
                 <!-- sidebar menu start-->
@@ -177,24 +204,38 @@ $remind = $this->session->userdata('remind');
         <section id="main-content">
           <section class="wrapper">
               <div class="row">
-                  <div class="col-lg-12 main-chart">
-                  首页页面内容<br>
-                      应用猪场管理系统，把原有不规则的手工数据进行标准化、格式化，
-                      提高了数据管理的效率，同时培养了企业员工的信息化能力，为将来
-                      进一步引入企业资源、物流管理等储备生产管理数据和管理人员。
-                      <br>
-                      目前我国的生猪养殖仍以散养方式为主，大部分的饲养规模在头以下，
-                      年出栏生猪占全国生猪出栏总量的比例虽然呈现逐年下降的趋势，但是
-                      仍保持在左右。这种模式下的养猪成本相对较高，机械化、自动化程度
-                      极低，没有形成规模，抗风险能力低，从而导致了较低的养殖效率以及
-                      偏高的猪肉价格。随着物价上涨，养猪所需的饲料等价格也普遍上升，
-                      这对采用散养方式的农户来说，是极为不利的，他们的竞争力也会变得
-                      越来越弱，将很难在市场上生存。应用猪场管理系统，把原有不规则的
-                      手工数据进行标准化、格式化，提高了数据管理的效率，同时培养了企
-                      业员工的信息化能力，为将来进一步引入企业资源、物流管理等储备生
-                      产管理数据和管理人员。
-                      系统拟开发功能如下：种猪管理、商品猪管理、饲料管理、药品管理、
-                      日常用品管理、收支管理等管理。
+                  <div id="pic" class="col-lg-12">
+                      <div id="big-img">
+                          <img src="assets/img/1.jpg" alt="" style="z-index: 5">
+                          <img src="assets/img/2.jpg" alt="" style="z-index: 4">
+                          <img src="assets/img/3.jpg" alt="" style="z-index: 3">
+                          <img src="assets/img/4.jpg" alt="" style="z-index: 2">
+                          <img src="assets/img/5.jpg" alt="" style="z-index: 1">
+                      </div>
+                  </div>
+                  <div class="col-lg-12 text-content">
+                      <span class="text-tile">中小型猪场管理系统简介</span>
+                      <p class="text">
+                          应用猪场管理系统，把原有不规则的手工数据进行标准化、格式化，
+                          提高了数据管理的效率，同时培养了企业员工的信息化能力，为将来
+                          进一步引入企业资源、物流管理等储备生产管理数据和管理人员。
+                      </p>
+                      <p class="text">
+                          目前我国的生猪养殖仍以散养方式为主，大部分的饲养规模在头以下，
+                          年出栏生猪占全国生猪出栏总量的比例虽然呈现逐年下降的趋势，但是
+                          仍保持在左右。这种模式下的养猪成本相对较高，机械化、自动化程度
+                          极低，没有形成规模，抗风险能力低，从而导致了较低的养殖效率以及
+                          偏高的猪肉价格。随着物价上涨，养猪所需的饲料等价格也普遍上升，
+                          这对采用散养方式的农户来说，是极为不利的，他们的竞争力也会变得
+                          越来越弱，将很难在市场上生存。应用猪场管理系统，把原有不规则的
+                          手工数据进行标准化、格式化，提高了数据管理的效率，同时培养了企
+                          业员工的信息化能力，为将来进一步引入企业资源、物流管理等储备生
+                          产管理数据和管理人员。
+                      </p>
+                      <p class="text">
+                          系统拟开发功能如下：种猪管理、商品猪管理、饲料管理、药品管理、
+                          日常用品管理、收支管理等管理。
+                      </p>
                   </div>
               </div>
 
@@ -221,5 +262,44 @@ $remind = $this->session->userdata('remind');
     <script type="text/javascript" src="assets/js/gritter-conf.js"></script>
     <script src="assets/js/sparkline-chart.js"></script>    
 	<script src="assets/js/zabuto_calendar.js"></script>
+    <script src="assets/js/jslib.js"></script>
+    <script>
+        (function(){
+            var oBigImg = $("#big-img");
+            var aBigPic = oBigImg.find("img");
+            var oContainer =  $("#pic");
+            var iNow = 0;
+            var zIndex = 9;
+            var timer;
+            run();
+            oContainer.mouseover (function(){
+                clearInterval(timer);
+            }) ;
+            oContainer.mouseout(function(){
+                run();
+            });
+
+            function run(){
+                timer = setInterval(function(){
+                    iNow++;
+                    if(iNow == aBigPic.length){
+                        iNow = 0;
+                    }
+                    changeImg(iNow);
+                }, 2000);
+            }
+            function changeImg(index){
+                iNow = index;
+                $(aBigPic[index]).css({
+                    opacity:0,
+                    filter:"alpha(opacity=0)",
+                    zIndex:zIndex++
+                });
+                animate(aBigPic[index], {
+                    opacity: 100
+                });
+            }
+        })();
+    </script>
   </body>
 </html>

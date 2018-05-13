@@ -37,98 +37,45 @@
   <body>
 
   <section id="container" >
-      <!--header start-->
       <header class="header black-bg">
           <div class="sidebar-toggle-box">
               <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
           </div>
-          <!--logo start-->
-          <a href="../index.html" class="logo"><b>中小型猪场管理系统（非专业版）</b></a>
-          <!--logo end-->
+          <a href="welcome/home" class="logo"><b>中小型猪场管理系统</b></a>
           <div class="nav notify-row" id="top_menu">
-              <!--  notification start -->
               <ul class="nav top-menu">
-                  <!-- settings start -->
                   <li class="dropdown">
-                      <a data-toggle="dropdown" class="dropdown-toggle" href="../index.html#">
+                      <a data-toggle="dropdown" class="dropdown-toggle" href="welcome/home">
                           <i class="fa fa-tasks"></i>
-                          <span class="badge bg-theme">4</span>
+                          <span class="badge bg-theme"><?php echo count($remind)?></span>
                       </a>
                       <ul class="dropdown-menu extended tasks-bar">
                           <div class="notify-arrow notify-arrow-green"></div>
                           <li>
-                              <p class="green">您有4条提醒信息，请及时处理！</p>
+                              <p class="green">您有<?php echo count($remind)?>条提醒信息，请及时处理！</p>
                           </li>
-                          <li>
-                              <a href="index.html#">
+                          <?php
+                          foreach($remind as $rem) {
+                              ?>
+                              <li class="remind">
                                   <div class="task-info">
-                                      <div class="desc">DashGum Admin Panel</div>
-                                      <div class="percent">40%</div>
+                                      <div class="desc"><?php echo $rem->content;?></div>
                                   </div>
-                                  <div class="progress progress-striped">
-                                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                          <span class="sr-only">40% Complete (success)</span>
-                                      </div>
-                                  </div>
-                              </a>
-                          </li>
-                          <li>
-                              <a href="index.html#">
-                                  <div class="task-info">
-                                      <div class="desc">Database Update</div>
-                                      <div class="percent">60%</div>
-                                  </div>
-                                  <div class="progress progress-striped">
-                                      <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                          <span class="sr-only">60% Complete (warning)</span>
-                                      </div>
-                                  </div>
-                              </a>
-                          </li>
-                          <li>
-                              <a href="index.html#">
-                                  <div class="task-info">
-                                      <div class="desc">Product Development</div>
-                                      <div class="percent">80%</div>
-                                  </div>
-                                  <div class="progress progress-striped">
-                                      <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                          <span class="sr-only">80% Complete</span>
-                                      </div>
-                                  </div>
-                              </a>
-                          </li>
-                          <li>
-                              <a href="index.html#">
-                                  <div class="task-info">
-                                      <div class="desc">Payments Sent</div>
-                                      <div class="percent">70%</div>
-                                  </div>
-                                  <div class="progress progress-striped">
-                                      <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
-                                          <span class="sr-only">70% Complete (Important)</span>
-                                      </div>
-                                  </div>
-                              </a>
-                          </li>
-                          <li class="external">
-                              <a href="#">查看全部提醒</a>
-                          </li>
+                              </li>
+                              <?php
+                          }
+                          ?>
                       </ul>
                   </li>
-                  <!-- settings end -->
               </ul>
-              <!--  notification end -->
           </div>
           <div class="top-menu">
               <ul class="nav pull-right top-menu">
-                  <li id="welcome">欢迎您，马金金（管理员）</li>
+                  <li id="welcome">欢迎您，<?php echo $login_user -> username; ?>（<?php echo $login_user -> identity; ?>）</li>
+                  <li id="sign-out"><a href="welcome/index" class="btn btn-theme04">退出登录</a></li>
               </ul>
           </div>
       </header>
-      <!--header end-->
-
-      <!--sidebar start-->
       <aside>
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
@@ -231,9 +178,6 @@
               <!-- sidebar menu end-->
           </div>
       </aside>
-      <!--sidebar end-->
-
-      <!--main content start-->
       <section id="main-content">
           <section class="wrapper">
               <h3><i class="fa fa-angle-right"></i> 猪场设置</h3>
@@ -387,9 +331,6 @@
               </div>
           </section>
       </section>
-      <!--main content end-->
-
-      <!--footer start-->
       <footer class="site-footer">
           <div class="text-center">
               2018届信息管理与信息系统一班马金金
@@ -398,7 +339,6 @@
               </a>
           </div>
       </footer>
-      <!--footer end-->
   </section>
 
     <!-- js placed at the end of the document so the pages load faster -->

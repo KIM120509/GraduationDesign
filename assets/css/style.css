@@ -256,7 +256,7 @@ ul.top-menu > li > .logout {
     height:17px;
     width:17px;
     display:inline-block;
-    background: url("../img/nav-expand.png") no-repeat top;
+    /*background: url("../img/nav-expand.png") no-repeat top;*/
     border-radius:3px;
     -moz-border-radius:3px;
     -webkit-border-radius:3px;
@@ -265,7 +265,7 @@ ul.top-menu > li > .logout {
     top:15px;
 }
 .active .dcjq-icon {
-    background: url("../img/nav-expand.png") no-repeat bottom;
+    /*background: url("../img/nav-expand.png") no-repeat bottom;*/
     border-radius:3px;
     -moz-border-radius:3px;
     -webkit-border-radius:3px;
@@ -548,11 +548,18 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
     color: #2E2E2E;
 }
 
-.dropdown-menu.tasks-bar .task-info .desc {
-    font-size: 13px;
-    font-weight: normal;
+.dropdown-menu.tasks-bar .remind .task-info .desc {
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+    line-height: 40px;
+    border-bottom: 1px dashed;
+    text-indent: 10px;
+    font-weight: bold;
 }
-
+.dropdown-menu.tasks-bar .remind:last-child .task-info .desc{
+    border-bottom: 0;
+}
 .dropdown-menu.tasks-bar .task-info .percent {
     display: inline-block;
     float: right;
@@ -694,7 +701,7 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 }
 
 .log-arrow-up {
-    background: url("../img/arrow-up.png") no-repeat;
+    /*background: url("../img/arrow-up.png") no-repeat;*/
     width: 20px;
     height: 11px;
     position: absolute;
@@ -2247,4 +2254,12 @@ label {
     line-height: 60px;
 
 }
+#sign-out a{
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bolder;
+    margin-top: 15px;
+    margin-left: 13px;
+}
+
 
