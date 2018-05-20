@@ -1,3 +1,6 @@
+<?php
+$login_user = $this->session->userdata('login_user');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

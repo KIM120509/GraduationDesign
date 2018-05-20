@@ -23,6 +23,7 @@ class Welcome extends CI_Controller {
 
         if($result){//查到结果
             $this -> session -> set_userdata('login_user', $result);
+
             redirect('welcome/home');
         }else{//未查到结果
             echo 'fail';
@@ -30,15 +31,9 @@ class Welcome extends CI_Controller {
     }
 
     public function home(){
-//        $this->load->view('home');
-        //获取提醒信息
         $login_user = $this->session->userdata('login_user');
         $data['remind']  = $this -> user_model -> get_remind_by_name($login_user -> user_id);
-//        $articles = $this->article_model->get_ariticles_by_user($loginedUser->user_id);
-//        $this -> session -> set_userdata('remind', $remind);
-
         $this->load->view('home',$data);
-
     }
 
 }

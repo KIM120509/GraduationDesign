@@ -17,6 +17,7 @@
               <div class="logo png"></div>
               <div class="input">
                   <div class="log">
+                      <div class="tip">密码错误，请重新输入！</div>
                       <div class="name">
                           <label>用户名</label><input type="text" class="text" id="value_1" placeholder="用户名" name="username" tabindex="1">
                       </div>
@@ -25,7 +26,7 @@
                           <input type="submit" class="submit" tabindex="3" value="登录">
                           <div class="check"></div>
                       </div>
-                      <div class="tip"></div>
+
                   </div>
               </div>
           </div>

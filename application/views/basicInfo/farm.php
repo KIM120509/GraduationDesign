@@ -1,7 +1,5 @@
 <?php
 $login_user = $this->session->userdata('login_user');
-$remind = $this->session->userdata('remind');
-//echo $remind;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,12 +29,60 @@ $remind = $this->session->userdata('remind');
       #main-content table th,#main-content table td{
           text-align: center;
       }
+      .content-panel{
+          position: relative;
+      }
+      .alert{
+          position: fixed;
+          z-index: 5;
+          width: 500px;
+          height: 200px;
+          background: #ffd777;
+          display: none;
+          left: 393px;
+          top: 200px;
+      }
+      .alert .alert_title{
+          display: inline-block;
+          width: 100%;
+          height: 50px;
+          color: #ffffff;
+          font-weight: bolder;
+          font-size: 20px;
+          text-align: center;
+          line-height: 50px;
+          border-bottom: double;
+      }
+      .alert .alert_con{
+          width: 100%;
+          /*height: 150px;*/
+          padding-left: 20px;
+          position: relative;
+      }
+      .alert .alert_con div{
+          position: absolute;
+          top: 35px;
+          color: #ffffff;
+          /*font-size: 18px;*/
+      }
+      .alert .alert_con .alert_con_tip{
+          display: inline-block;
+          width: 100px;
+          height: 34px;
+          text-align: center;
+          color: #ffffff;
+          font-size: 18px;
+      }
+      .alert .alert_con .alert_con_info{
+          width: 150px;
+          height: 34px;
+          margin-right: 30px;
+          border-radius: 6px;
+          color: #000;
+      }
     </style>
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
   </head>
 
   <body>
@@ -201,11 +247,20 @@ $remind = $this->session->userdata('remind');
                               </thead>
                               <tbody>
                               <tr>
-                                  <td>老马家的猪场</td>
+                                  <td><?php echo $farm[0]->farm_name;?></td>
                                   <td>
-                                      <button type="button" class="btn btn-warning">编辑</button>
-                                      <!--<button type="button" class="btn btn-success">保存</button>-->
-                                      <!--<button type="button" class="btn btn-danger">取消</button>-->
+                                      <button type="button" class="btn btn-warning edit">编辑</button>
+                                      <div class="alert">
+                                          <span class="alert_title">猪场名称设置</span>
+                                          <div class="alert_con">
+                                              <div>
+                                                  <span class="alert_con_tip">猪场名称</span>
+                                                  <input type="text" class="alert_con_info" placeholder="<?php echo $farm[0]->farm_name;?>">
+                                                  <a href="javascript:;" class="save" data-index="1"><button type="button" class="btn btn-success">保存</button></a>
+                                                  <a href="basicInfo/index"><button type="button" class="btn btn-danger">取消</button></a>
+                                              </div>
+                                          </div>
+                                      </div>
                                   </td>
                                   <td>猪场名称暂时不允许进行增加、删除等操作，只能在此基础上修改</td>
                               </tr>
@@ -229,46 +284,27 @@ $remind = $this->session->userdata('remind');
                               </tr>
                               </thead>
                               <tbody>
+                              <?php foreach ($builds as $build){?>
                               <tr>
-                                  <td>1</td>
-                                  <td>种母猪</td>
+                                  <td><?php echo $build -> build_id;?></td>
+                                  <td><?php echo $build -> build_name;?></td>
                                   <td>
-                                      <button type="button" class="btn btn-warning">编辑</button>
-                                      <button type="button" class="btn btn-primary">删除</button>
-                                      <!--<button type="button" class="btn btn-success">保存</button>-->
-                                      <!--<button type="button" class="btn btn-danger">取消</button>-->
+                                      <button type="button" class="btn btn-warning edit">编辑</button>
+                                      <a href="basicInfo/delete_build?build_id=<?php echo $build->build_id?>"><button type="button" class="btn btn-primary">删除</button></a>
+                                      <div class="alert">
+                                          <span class="alert_title">栋别设置</span>
+                                          <div class="alert_con">
+                                              <div>
+                                                  <span class="alert_con_tip">栋别名称</span>
+                                                  <input type="text" class="alert_con_info" placeholder="<?php echo $build -> build_name;?>">
+                                                  <a href="javascript:;" class="save" data-index="2"><button type="button" class="btn btn-success">保存</button></a>
+                                                  <a href="basicInfo/index"><button type="button" class="btn btn-danger">取消</button></a>
+                                              </div>
+                                          </div>
+                                      </div>
                                   </td>
                               </tr>
-                              <tr>
-                                  <td>2</td>
-                                  <td>种公猪</td>
-                                  <td>
-                                      <button type="button" class="btn btn-warning">编辑</button>
-                                      <button type="button" class="btn btn-primary">删除</button>
-                                      <!--<button type="button" class="btn btn-success">保存</button>-->
-                                      <!--<button type="button" class="btn btn-danger">取消</button>-->
-                                  </td>
-                              </tr>
-                              <tr>
-                                  <td>3</td>
-                                  <td>育肥</td>
-                                  <td>
-                                      <button type="button" class="btn btn-warning">编辑</button>
-                                      <button type="button" class="btn btn-primary">删除</button>
-                                      <!--<button type="button" class="btn btn-success">保存</button>-->
-                                      <!--<button type="button" class="btn btn-danger">取消</button>-->
-                                  </td>
-                              </tr>
-                              <tr>
-                                  <td>4</td>
-                                  <td>产房</td>
-                                  <td>
-                                      <button type="button" class="btn btn-warning">编辑</button>
-                                      <button type="button" class="btn btn-primary">删除</button>
-                                      <!--<button type="button" class="btn btn-success">保存</button>-->
-                                      <!--<button type="button" class="btn btn-danger">取消</button>-->
-                                  </td>
-                              </tr>
+                              <?php }?>
                               </tbody>
                           </table>
                       </div>
@@ -289,46 +325,27 @@ $remind = $this->session->userdata('remind');
                               </tr>
                               </thead>
                               <tbody>
+                              <?php foreach ($fences as $fence){?>
                               <tr>
-                                  <td>1</td>
-                                  <td>一号栏</td>
+                                  <td><?php echo $fence -> fence_id;?></td>
+                                  <td><?php echo $fence -> fence_name;?></td>
                                   <td>
-                                      <button type="button" class="btn btn-warning">编辑</button>
-                                      <button type="button" class="btn btn-primary">删除</button>
-                                      <!--<button type="button" class="btn btn-success">保存</button>-->
-                                      <!--<button type="button" class="btn btn-danger">取消</button>-->
+                                      <button type="button" class="btn btn-warning edit">编辑</button>
+                                      <a href="basicInfo/delete_fence?fence_id=<?php echo $fence->fence_id?>"><button type="button" class="btn btn-primary">删除</button></a>
+                                      <div class="alert">
+                                          <span class="alert_title">栏别设置</span>
+                                          <div class="alert_con">
+                                              <div>
+                                                  <span class="alert_con_tip">栏别名称</span>
+                                                  <input type="text" class="alert_con_info" placeholder="<?php echo $fence -> fence_name;?>">
+                                                  <a href="javascript:;" class="save" data-index="3"><button type="button" class="btn btn-success">保存</button></a>
+                                                  <a href="basicInfo/index"><button type="button" class="btn btn-danger">取消</button></a>
+                                              </div>
+                                          </div>
+                                      </div>
                                   </td>
                               </tr>
-                              <tr>
-                                  <td>2</td>
-                                  <td>二号栏</td>
-                                  <td>
-                                      <button type="button" class="btn btn-warning">编辑</button>
-                                      <button type="button" class="btn btn-primary">删除</button>
-                                      <!--<button type="button" class="btn btn-success">保存</button>-->
-                                      <!--<button type="button" class="btn btn-danger">取消</button>-->
-                                  </td>
-                              </tr>
-                              <tr>
-                                  <td>3</td>
-                                  <td>三号栏</td>
-                                  <td>
-                                      <button type="button" class="btn btn-warning">编辑</button>
-                                      <button type="button" class="btn btn-primary">删除</button>
-                                      <!--<button type="button" class="btn btn-success">保存</button>-->
-                                      <!--<button type="button" class="btn btn-danger">取消</button>-->
-                                  </td>
-                              </tr>
-                              <tr>
-                                  <td>4</td>
-                                  <td>四号栏</td>
-                                  <td>
-                                      <button type="button" class="btn btn-warning">编辑</button>
-                                      <button type="button" class="btn btn-primary">删除</button>
-                                      <!--<button type="button" class="btn btn-success">保存</button>-->
-                                      <!--<button type="button" class="btn btn-danger">取消</button>-->
-                                  </td>
-                              </tr>
+                              <?php }?>
                               </tbody>
                           </table>
                       </div>
@@ -346,14 +363,29 @@ $remind = $this->session->userdata('remind');
       </footer>
   </section>
 
-    <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/jquery-ui-1.9.2.custom.min.js"></script>
-    <script src="assets/js/jquery.ui.touch-punch.min.js"></script>
-    <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
-    <script src="assets/js/jquery.scrollTo.min.js"></script>
-    <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
-    <script src="assets/js/common-scripts.js"></script>
+  <script src="assets/js/jquery.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/jquery-ui-1.9.2.custom.min.js"></script>
+  <script src="assets/js/jquery.ui.touch-punch.min.js"></script>
+  <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
+  <script src="assets/js/jquery.scrollTo.min.js"></script>
+  <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
+  <script src="assets/js/common-scripts.js"></script>
+  <script>
+    var edit = $("#main-content .row .edit");
+    $(edit).on("click",function (e) {
+        $(this).siblings(".alert").css("display","block")
+    });
+    var save = $("#main-content .row .save");
+    $(save).on("click",function (e) {
+        var index = $(this).attr("data-index");
+        var info = $(this).siblings(".alert_con_info").val();
+        console.log(typeof index);
+        if(index == "1"){
+            $(this).attr('href','basicInfo/farm_edit?farm_name='+info);
 
+        }
+    });
+  </script>
   </body>
 </html>

@@ -160,20 +160,20 @@ $login_user = $this->session->userdata('login_user');
                             <li><a  href="feed/refund">饲料退库</a></li>
                         </ul>
                     </li>
-                    <li class="sub-menu">
-                        <a href="javascript:;" >
-                            <i class="fa fa-th"></i>
-                            <span>药品管理</span>
-                        </a>
-                        <ul class="sub">
-                            <li><a  href="drug/index">药品库存明细</a></li>
-                            <li><a  href="drug/storage">药品入库</a></li>
-                            <li><a  href="drug/out">药品出库</a></li>
-                            <li><a  href="drug/refund">药品退库</a></li>
-                            <li><a  href="drug/treatment">诊疗登记</a></li>
-                            <li><a  href="drug/disinfection">消毒登记</a></li>
-                        </ul>
-                    </li>
+<!--                    <li class="sub-menu">-->
+<!--                        <a href="javascript:;" >-->
+<!--                            <i class="fa fa-th"></i>-->
+<!--                            <span>药品管理</span>-->
+<!--                        </a>-->
+<!--                        <ul class="sub">-->
+<!--                            <li><a  href="drug/index">药品库存明细</a></li>-->
+<!--                            <li><a  href="drug/storage">药品入库</a></li>-->
+<!--                            <li><a  href="drug/out">药品出库</a></li>-->
+<!--                            <li><a  href="drug/refund">药品退库</a></li>-->
+<!--                            <li><a  href="drug/treatment">诊疗登记</a></li>-->
+<!--                            <li><a  href="drug/disinfection">消毒登记</a></li>-->
+<!--                        </ul>-->
+<!--                    </li>-->
                     <li class="sub-menu">
                         <a href="javascript:;" >
                             <i class=" fa fa-bar-chart-o"></i>
@@ -184,19 +184,19 @@ $login_user = $this->session->userdata('login_user');
                             <li><a  href="money/expenses">支出登记</a></li>
                         </ul>
                     </li>
-                    <li class="sub-menu">
-                        <a href="javascript:;" >
-                            <i class=" fa fa-bar-chart-o"></i>
-                            <span>日用商品管理</span>
-                        </a>
-                        <ul class="sub">
-                            <li><a  href="daily/index">库存明细</a></li>
-                            <li><a  href="daily/purchase">采购登记</a></li>
-                            <li><a  href="daily/uses">领用登记</a></li>
-                            <li><a  href="daily/scrap">报废登记</a></li>
-                            <li><a  href="daily/articlesInfo">用品信息</a></li>
-                        </ul>
-                    </li>
+<!--                    <li class="sub-menu">-->
+<!--                        <a href="javascript:;" >-->
+<!--                            <i class=" fa fa-bar-chart-o"></i>-->
+<!--                            <span>日用商品管理</span>-->
+<!--                        </a>-->
+<!--                        <ul class="sub">-->
+<!--                            <li><a  href="daily/index">库存明细</a></li>-->
+<!--                            <li><a  href="daily/purchase">采购登记</a></li>-->
+<!--                            <li><a  href="daily/uses">领用登记</a></li>-->
+<!--                            <li><a  href="daily/scrap">报废登记</a></li>-->
+<!--                            <li><a  href="daily/articlesInfo">用品信息</a></li>-->
+<!--                        </ul>-->
+<!--                    </li>-->
                 </ul>
                 <!-- sidebar menu end-->
             </div>
