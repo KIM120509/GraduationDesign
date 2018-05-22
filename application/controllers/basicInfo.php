@@ -18,6 +18,9 @@ class basicInfo extends CI_Controller {
         $data['fences'] = $this -> basicInfo_model ->get_fence_by_name($login_user -> user_id);
         $this->load->view('basicInfo/farm',$data);
 	}
+	public function farm_save(){
+
+    }
     public function delete_build(){
         $build_id=$this->input->get('build_id');
         $row=$this->basicInfo_model->delete_build($build_id);
@@ -44,11 +47,13 @@ class basicInfo extends CI_Controller {
     public function customer(){
         $login_user = $this->session->userdata('login_user');
         $data['remind']  = $this -> user_model -> get_remind_by_name($login_user -> user_id);
+        $data['customers']  = $this -> basicInfo_model -> get_customer_by_name($login_user -> user_id);
         $this->load->view('basicInfo/customer',$data);
     }
     public function employee(){
         $login_user = $this->session->userdata('login_user');
         $data['remind']  = $this -> user_model -> get_remind_by_name($login_user -> user_id);
+        $data['employees']  = $this -> basicInfo_model -> get_employee_by_name($login_user -> user_id);
         $this->load->view('basicInfo/employee',$data);
     }
 

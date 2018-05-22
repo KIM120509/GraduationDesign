@@ -8,6 +8,14 @@
     <title>中小型猪场管理系统（非专业版）</title>
     <base href="<?php echo site_url();?>">
     <link href="assets/css/main.css" rel="stylesheet" type="text/css" />
+    <style>
+        .tip{
+            color: red;
+            font-size: 20px;
+            font-weight: bolder;
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
@@ -17,7 +25,7 @@
               <div class="logo png"></div>
               <div class="input">
                   <div class="log">
-                      <div class="tip">密码错误，请重新输入！</div>
+                      <div class="tip"><?php echo $tip;?></div>
                       <div class="name">
                           <label>用户名</label><input type="text" class="text" id="value_1" placeholder="用户名" name="username" tabindex="1">
                       </div>

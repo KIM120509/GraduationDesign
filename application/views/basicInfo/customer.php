@@ -1,3 +1,6 @@
+<?php
+$login_user = $this->session->userdata('login_user');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -203,21 +206,21 @@
                             </tr>
                             </thead>
                             <tbody>
+                            <?php foreach ($customers as $customer){?>
                             <tr>
-                                <td>1</td>
-                                <td>老王家的菜市场</td>
-                                <td>王飞飞</td>
-                                <td>188********</td>
-                                <td>长期</td>
-                                <td>11B439</td>
-                                <td>人美菜好</td>
+                                <td><?php echo $customer -> customer_id;?></td>
+                                <td><?php echo $customer -> customer_company;?></td>
+                                <td><?php echo $customer -> customer_contacts;?></td>
+                                <td><?php echo $customer -> customer_tel;?></td>
+                                <td><?php echo $customer -> customer_category;?></td>
+                                <td><?php echo $customer -> customer_address;?></td>
+                                <td><?php echo $customer -> customer_remarks;?></td>
                                 <td>
                                     <button type="button" class="btn btn-warning">编辑</button>
                                     <button type="button" class="btn btn-primary">删除</button>
-                                    <!--<button type="button" class="btn btn-success">保存</button>-->
-                                    <!--<button type="button" class="btn btn-danger">取消</button>-->
                                 </td>
                             </tr>
+                            <?php }?>
                             </tbody>
                         </table>
                     </div>

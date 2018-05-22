@@ -1,3 +1,6 @@
+<?php
+$login_user = $this->session->userdata('login_user');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -204,22 +207,36 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>00001</td>
-                                <td>张三</td>
-                                <td>男</td>
-                                <td>技术</td>
-                                <td>138********</td>
-                                <td>唐山市</td>
-                                <td>小哥哥额</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning">编辑</button>
-                                    <button type="button" class="btn btn-primary">删除</button>
-                                    <!--<button type="button" class="btn btn-success">保存</button>-->
-                                    <!--<button type="button" class="btn btn-danger">取消</button>-->
-                                </td>
-                            </tr>
+<!--                            <tr>-->
+<!--                                <td>1</td>-->
+<!--                                <td>2014006</td>-->
+<!--                                <td>vv</td>-->
+<!--                                <td>nv</td>-->
+<!--                                <td>rrr</td>-->
+<!--                                <td>11111111</td>-->
+<!--                                <td>jjjjj</td>-->
+<!--                                <td>ttttt</td>-->
+<!--                                <td>-->
+<!--                                    <button type="button" class="btn btn-warning">编辑</button>-->
+<!--                                    <button type="button" class="btn btn-primary">删除</button>-->
+<!--                                </td>-->
+<!--                            </tr>-->
+                            <?php foreach ($employees as $employee){?>
+                                <tr>
+                                    <td><?php echo $employee -> employee_id;?></td>
+                                    <td><?php echo $employee -> employee_number;?></td>
+                                    <td><?php echo $employee -> employee_name;?></td>
+                                    <td><?php echo $employee -> employee_sex;?></td>
+                                    <td><?php echo $employee -> employee_position;?></td>
+                                    <td><?php echo $employee -> employee_tel;?></td>
+                                    <td><?php echo $employee -> employee_address;?></td>
+                                    <td><?php echo $employee -> employee_remarks;?></td>
+                                    <td>
+                                        <button type="button" class="btn btn-warning">编辑</button>
+                                        <button type="button" class="btn btn-primary">删除</button>
+                                    </td>
+                                </tr>
+                            <?php }?>
                             </tbody>
                         </table>
                     </div>

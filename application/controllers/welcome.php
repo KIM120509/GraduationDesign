@@ -10,7 +10,8 @@ class Welcome extends CI_Controller {
         $this -> load -> model('user_model');
     }
 	public function index(){
-        $this->load->view('login');
+        $data['tip'] = "欢迎您使用本系统！";
+        $this->load->view('login',$data);
 	}
     public function check_login(){
         //1. 接收数据
@@ -26,7 +27,8 @@ class Welcome extends CI_Controller {
 
             redirect('welcome/home');
         }else{//未查到结果
-            echo 'fail';
+           $data['tip'] = "请输入正确的用户名或密码！";
+            $this->load->view('login',$data);
         }
     }
 

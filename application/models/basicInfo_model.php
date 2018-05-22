@@ -33,4 +33,17 @@ class basicInfo_model extends CI_Model{
         return $this->db->affected_rows();
     }
 
+    public function get_customer_by_name($user_id){
+        $sql="select * from t_customer where user_id=$user_id";
+        $result = $this->db->query ($sql);
+        $re = $result->result ();
+        return $re;
+    }
+    public function get_employee_by_name($user_id){
+        $sql="select * from t_employee where user_id=$user_id";
+        $result = $this->db->query ($sql);
+        $re = $result->result ();
+        return $re;
+    }
+
 }

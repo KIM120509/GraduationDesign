@@ -37,7 +37,7 @@ $login_user = $this->session->userdata('login_user');
           z-index: 5;
           width: 500px;
           height: 200px;
-          background: #ffd777;
+          background: #d7c7c8;
           display: none;
           left: 393px;
           top: 200px;
